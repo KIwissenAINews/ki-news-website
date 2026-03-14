@@ -3,32 +3,211 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KI Wissen – KI News, Tools & Guides</title>
-  <meta name="description" content="Tägliche KI-News, Tool-Tests und praktische Guides – verständlich, schnell, nützlich." />
+  <title>KI Wissen – Aktuelle KI News, Tools & Praxis</title>
+  <meta name="description" content="Die erste Anlaufstelle für KI Wissen: aktuelle KI-News, Tool-Updates, Praxis-Tipps und verständliche Einordnung mit Quellen." />
+  <meta name="theme-color" content="#0b1020" />
+
   <style>
-  :root{--bg:#0b1020;--card:#121a31;--text:#eaf0ff;--muted:#a9b5d3;--pri:#6ea8fe;--ok:#6ee7b7}
-  *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#0b1020,#0f1730);color:var(--text)}
-  .wrap{max-width:980px;margin:0 auto;padding:16px}.topbar{position:sticky;top:0;background:#0b1020cc;backdrop-filter:blur(8px);border-bottom:1px solid #26345f}
-  .brand{font-weight:800}.topbar .wrap{display:flex;justify-content:space-between;align-items:center}.topbar nav a{color:var(--muted);margin-left:12px;text-decoration:none}
-  .card{background:var(--card);border:1px solid #26345f;border-radius:16px;padding:18px;margin:14px 0}.hero h1{margin:.2rem 0 0.7rem}.hero p{color:var(--muted)}
-  .btn{background:var(--pri);color:#08112a;border:0;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.post a{color:var(--ok)}
-  .ad-label{font-size:12px;color:var(--muted);margin:0 0 8px}.newsletter{display:flex;gap:8px;flex-wrap:wrap}.newsletter input{padding:10px 12px;border-radius:12px;border:1px solid #32457f;background:#0d152c;color:var(--text)}
-  .foot{color:var(--muted);text-align:center;padding-bottom:30px}.foot a{color:var(--muted)}
+    :root{--bg:#0b1020;--card:#121a31;--text:#eaf0ff;--muted:#a9b5d3;--pri:#6ea8fe;--ok:#6ee7b7;--line:#26345f}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#0b1020,#0f1730);color:var(--text)}
+    .wrap{max-width:1080px;margin:0 auto;padding:16px}
+    .topbar{position:sticky;top:0;background:#0b1020cc;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:20}
+    .toprow{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .brand{font-weight:800}
+    nav a{color:var(--muted);margin-left:12px;text-decoration:none}
+    nav a:hover{color:#fff}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0}
+    .hero h1{margin:.2rem 0 .7rem;font-size:clamp(1.4rem,3vw,2.2rem)}
+    .hero p{color:var(--muted);max-width:760px}
+    .btn{background:var(--pri);color:#08112a;border:0;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+    .meta{font-size:.9rem;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .post h3,.post h2{margin:.2rem 0 .5rem}
+    .post p{color:var(--muted)}
+    .post a{color:var(--ok)}
+    .badge{display:inline-block;font-size:.72rem;padding:4px 8px;border-radius:999px;background:#1b2a54;color:#cfe0ff;margin-bottom:8px}
+    .split{display:grid;grid-template-columns:2fr 1fr;gap:12px}
+    @media (max-width:900px){.split{grid-template-columns:1fr}}
+    .ad-label{font-size:12px;color:var(--muted);margin:0 0 8px}
+    .foot{color:var(--muted);text-align:center;padding-bottom:30px}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap}
+    .kpi{background:#0d152c;border:1px solid var(--line);padding:8px 10px;border-radius:10px;font-size:.85rem}
+    ul.clean{margin:0;padding-left:18px;color:var(--muted)}
+    .source{font-size:.82rem;color:#91a8dc;margin-top:8px}
   </style>
+
+  <!-- TODO: AdSense-ID ersetzen -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-REPLACE_ME" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header class="topbar"><div class="wrap"><div class="brand">KI Wissen</div><nav><a href="#news">News</a><a href="#tools">Tools</a><a href="#guide">Guide</a><a href="#recht">Rechtliches</a></nav></div></header>
+  <header class="topbar">
+    <div class="wrap toprow">
+      <div>
+        <div class="brand">KI Wissen</div>
+        <div class="meta">Aktuelle KI-Updates mit Quellen & Einordnung</div>
+      </div>
+      <nav>
+        <a href="#live">Live News</a>
+        <a href="#heute">Heute wichtig</a>
+        <a href="#praxis">Praxis</a>
+        <a href="#tools">Tools</a>
+        <a href="#recht">Rechtliches</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="wrap">
-    <section class="hero card"><h1>KI verstehen. Schnell umsetzen. Besser verdienen.</h1><p>Praxisnahe AI-News, konkrete Workflows und Tool-Empfehlungen für Creator, Freelancer und kleine Teams.</p><button class="btn" onclick="document.getElementById('news').scrollIntoView({behavior:'smooth'})">Jetzt lesen</button></section>
-    <section class="ad card"><p class="ad-label">Anzeige</p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-REPLACE_ME" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></section>
-    <section id="news" class="grid"><article class="card post"><h2>5 Prompt-Regeln, die sofort bessere Antworten liefern</h2><p>Kurzes Framework mit Beispielen für ChatGPT, Claude und Gemini.</p><a href="#">Weiterlesen →</a></article><article class="card post"><h2>Welche KI-Tools lohnen sich 2026 wirklich?</h2><p>Ein ehrlicher Vergleich nach Zeitgewinn, Qualität und Preis.</p><a href="#">Weiterlesen →</a></article><article class="card post"><h2>Von 0 auf AI-Workflow in 30 Minuten</h2><p>So automatisierst du Research, Text & Social Posts ohne Overkill.</p><a href="#">Weiterlesen →</a></article></section>
-    <section class="ad card"><p class="ad-label">Anzeige</p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-REPLACE_ME" data-ad-slot="2222222222" data-ad-format="rectangle"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></section>
-    <section id="tools" class="card"><h2>Top Tools diese Woche</h2><ul><li><strong>NotebookLM</strong> – Quellenbasierte Recherchen in Minuten</li><li><strong>Perplexity</strong> – schnelle Faktenchecks mit Referenzen</li><li><strong>n8n</strong> – einfache AI-Automationen ohne Entwicklerteam</li></ul></section>
-    <section id="guide" class="card"><h2>Gratis Mini-Guide</h2><p>„10 KI-Workflows, die jede Woche 5+ Stunden sparen“</p><form class="newsletter" onsubmit="event.preventDefault();alert('Top! Als Nächstes binden wir Brevo/Mailchimp ein.');"><input type="email" placeholder="deine@email.de" required><button class="btn" type="submit">Guide erhalten</button></form><small>Hinweis: Formular ist Demo – Mail-Integration folgt.</small></section>
-    <section id="recht" class="card"><h2>Impressum & Datenschutz</h2><p>Bitte vor AdSense-Freigabe vollständige Pflichtangaben (Impressum/Datenschutz) auf deinen Namen ergänzen.</p></section>
+    <section class="hero card">
+      <span class="badge">KI WISSEN HUB</span>
+      <h1>Die erste Anlaufstelle für KI Wissen</h1>
+      <p>
+        Hier findest du laufend aktuelle KI-News, Tool-Updates und direkte Praxis-Tipps – kompakt, verständlich,
+        mit Quellen statt Hype.
+      </p>
+      <div class="kpis">
+        <div class="kpi">Update-Frequenz: automatisch</div>
+        <div class="kpi">Fokus: KI/Tech/Produktivität</div>
+        <div class="kpi" id="lastUpdated">Letztes Update: wird geladen…</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="ad-label">Anzeige</p>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-REPLACE_ME" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </section>
+
+    <section id="live" class="split">
+      <section class="card">
+        <h2>Live KI-News (automatisch geladen)</h2>
+        <p class="meta">Quelle: aktuelle Tech/AI-Meldungen aus offenen Feeds.</p>
+        <div id="liveNews" class="grid"></div>
+      </section>
+
+      <aside class="card" id="heute">
+        <h2>Heute wichtig</h2>
+        <ul class="clean" id="todayList">
+          <li>Feeds werden geladen…</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="praxis" class="card">
+      <h2>Praxis-Tipps für Creator & Business</h2>
+      <div class="grid">
+        <article class="post">
+          <span class="badge">Workflow</span>
+          <h3>Das 4-Block Prompt-Schema</h3>
+          <p>Aufgabe, Zielgruppe, Ausgabeformat, Qualitätskriterium – damit werden Antworten messbar besser.</p>
+        </article>
+        <article class="post">
+          <span class="badge">Produktivität</span>
+          <h3>2-Stufen-Recherche</h3>
+          <p>Erst breite Ideen (Perplexity/News), dann Tiefe (Originalquelle lesen) – spart Zeit und reduziert Fehler.</p>
+        </article>
+        <article class="post">
+          <span class="badge">Monetarisierung</span>
+          <h3>Content → Lead → Produkt</h3>
+          <p>Nutze News-Posts als Top-of-Funnel und leite auf Newsletter, Mini-Guides oder Services weiter.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="ad-label">Anzeige</p>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-REPLACE_ME" data-ad-slot="2222222222" data-ad-format="rectangle"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </section>
+
+    <section id="tools" class="card">
+      <h2>Tool-Radar</h2>
+      <div id="toolRadar" class="grid"></div>
+    </section>
+
+    <section id="recht" class="card">
+      <h2>Rechtliches (für AdSense Pflicht)</h2>
+      <ul class="clean">
+        <li><a href="impressum.html" style="color:#cfe0ff">Impressum</a> mit vollständigen Pflichtangaben ergänzen</li>
+        <li><a href="privacy.html" style="color:#cfe0ff">Datenschutz</a> auf echte Dienste (AdSense/Analytics/Newsletter) anpassen</li>
+        <li>AdSense-ID von <code>ca-pub-REPLACE_ME</code> auf echte Publisher-ID ändern</li>
+      </ul>
+    </section>
   </main>
-  <footer class="wrap foot"><p>© 2026 KI Wissen</p></footer>
+
+  <footer class="wrap foot">
+    <p>© 2026 KI Wissen</p>
+  </footer>
+
+  <script>
+    const toolItems = [
+      {name:'ChatGPT', blurb:'Stark für Schreiben, Struktur, Ideation.'},
+      {name:'Claude', blurb:'Sehr gut für lange, strukturierte Inhalte.'},
+      {name:'Perplexity', blurb:'Recherche mit Quellenlinks.'},
+      {name:'NotebookLM', blurb:'Q&A auf eigenen Dokumenten/Quellen.'},
+      {name:'n8n', blurb:'Automationen inkl. KI-Workflows.'},
+      {name:'Midjourney', blurb:'Bild-Content für Social/Ads.'},
+    ];
+
+    function renderTools(){
+      const el = document.getElementById('toolRadar');
+      el.innerHTML = toolItems.map(t => `
+        <article class="post card" style="margin:0">
+          <h3>${t.name}</h3>
+          <p>${t.blurb}</p>
+        </article>
+      `).join('');
+    }
+
+    async function fetchHN(){
+      const url = 'https://hn.algolia.com/api/v1/search_by_date?query=AI%20OR%20OpenAI%20OR%20Anthropic%20OR%20Gemini&tags=story&hitsPerPage=12';
+      const res = await fetch(url);
+      const data = await res.json();
+      return (data.hits || [])
+        .filter(x => x.title && x.url)
+        .slice(0,8)
+        .map(x => ({
+          title: x.title,
+          url: x.url,
+          source: 'HN / externe Quelle',
+          when: new Date(x.created_at).toLocaleString('de-DE')
+        }));
+    }
+
+    function renderLive(items){
+      const live = document.getElementById('liveNews');
+      const today = document.getElementById('todayList');
+
+      if(!items.length){
+        live.innerHTML = '<article class="card" style="margin:0"><h3>Gerade keine Live-Feeds verfügbar</h3><p class="meta">Bitte später erneut laden.</p></article>';
+        today.innerHTML = '<li>Keine Feed-Daten verfügbar.</li>';
+        return;
+      }
+
+      live.innerHTML = items.map(n => `
+        <article class="post card" style="margin:0">
+          <span class="badge">Live</span>
+          <h3>${n.title}</h3>
+          <a href="${n.url}" target="_blank" rel="noopener">Quelle öffnen →</a>
+          <div class="source">${n.source} · ${n.when}</div>
+        </article>
+      `).join('');
+
+      today.innerHTML = items.slice(0,5).map(n => `<li><a style="color:#cfe0ff" href="${n.url}" target="_blank" rel="noopener">${n.title}</a></li>`).join('');
+    }
+
+    async function boot(){
+      renderTools();
+      document.getElementById('lastUpdated').textContent = 'Letztes Update: ' + new Date().toLocaleString('de-DE');
+      try {
+        const hn = await fetchHN();
+        renderLive(hn);
+      } catch (e){
+        renderLive([]);
+      }
+    }
+
+    boot();
+  </script>
 </body>
 </html>
